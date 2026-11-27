@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arah Pulang 88 – Travel Eksklusif Antar Kota</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1950;--deep:#070f33;--gold:#f9b92e;--gold2:#f9dc86;--foil:linear-gradient(135deg,#fbe29a,#f9b92e 50%,#c98a0e);
+--bg:#f3f6fc;--card:#fff;--ink:#0d1950;--muted:#51608f;--line:#d8e0f2;--alt:#e8eefa;--field:#f3f6fc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070f33;--card:#0f1b50;--ink:#f1f4ff;--muted:#aebbe6;--line:#2a3a7c;--alt:#0a1442;--field:#0a1442}}
+:root[data-theme="dark"]{--bg:#070f33;--card:#0f1b50;--ink:#f1f4ff;--muted:#aebbe6;--line:#2a3a7c;--alt:#0a1442;--field:#0a1442}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--deep);z-index:60}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 2.4rem);margin:auto}
+.serif,h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+.gold{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,15,51,.92);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(249,185,46,.45)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:1.55rem;text-decoration:none;letter-spacing:.02em}
+nav ul{display:flex;gap:.2rem;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:.5rem 1rem;text-decoration:none;font-size:.92rem;font-weight:500;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--gold);outline:none}
+nav a.cta{border:1px solid var(--gold);border-radius:99px;color:var(--gold2);margin-left:.6rem}
+nav a.cta:hover{background:var(--gold);color:var(--deep)}
+#menu{display:none;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:10px;padding:.35rem .7rem;font-size:1.2rem;cursor:pointer}
+.hero{color:#fff;text-align:center;padding:4.5rem 0 0;overflow:hidden;background:radial-gradient(ellipse 80% 45% at 50% 100%,rgba(249,185,46,.55),transparent 70%),linear-gradient(180deg,#050b29 0%,#0d1950 55%,#1c2f7d 100%)}
+.hero h1{margin:0;line-height:.9;font-weight:700}
+.hero h1 small{display:block;font-size:clamp(1.8rem,5vw,3rem);letter-spacing:.12em}
+.hero h1 span{display:block;font-size:clamp(7rem,28vw,15rem);letter-spacing:-.03em;filter:drop-shadow(0 6px 24px rgba(249,185,46,.35))}
+.rule{display:flex;align-items:center;justify-content:center;gap:1rem;margin:.8rem auto 1.2rem;max-width:420px}
+.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{transform:scaleX(-1)}
+.rule i{width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.tag{font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:500;margin:0 auto .4rem;max-width:32ch}
+.script{font-family:"Dancing Script",cursive,serif;font-size:clamp(1.9rem,5vw,2.8rem);color:var(--gold2);margin:.3rem 0}
+.sub{max-width:46ch;margin:0 auto 1.8rem;color:#c3cdf2}
+.btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--foil);color:#0d1950;font:inherit;font-weight:600;border:0;border-radius:99px;padding:.9rem 2rem;text-decoration:none;cursor:pointer;box-shadow:0 8px 24px rgba(249,185,46,.3)}
+.btn:hover{filter:brightness(1.06)}
+.btn:focus-visible,.ghost:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.ghost{display:inline-block;border:1px solid var(--gold);color:var(--gold2);border-radius:99px;padding:.9rem 2rem;text-decoration:none;font-weight:600}
+.ghost:hover{background:rgba(249,185,46,.15)}
+.road{margin-top:2.2rem;position:relative;height:150px}
+.road::after{content:"";position:absolute;inset:auto 0 0;height:36px;background:#03071f;border-top:2px solid var(--gold)}
+.bus{position:absolute;bottom:24px;left:50%;width:min(440px,76vw);margin-left:calc(min(440px,76vw) / -2);animation:drive 1.6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes drive{from{transform:translateX(-70vw)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.bus{animation:none}}
+.feats{background:var(--deep);color:#fff;padding:2.6rem 0;border-bottom:1px solid rgba(249,185,46,.35)}
+.feats ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.6rem;text-align:center}
+.feats li{font-weight:500}
+.feats i{display:grid;place-items:center;width:68px;height:68px;margin:0 auto .6rem;border-radius:50%;border:1px solid var(--gold);font-style:normal;font-size:1.7rem;box-shadow:inset 0 0 0 5px rgba(249,185,46,.12)}
+.feats small{display:block;color:#aebbe6;font-weight:400}
+section{padding:5rem 0}
+.head{text-align:center;margin-bottom:2.4rem}
+h2{font-size:clamp(2.2rem,5vw,3.2rem);margin:0;line-height:1.1}
+.head p{margin:.6rem auto 0;color:var(--muted);max-width:52ch}
+.ticket{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;background:var(--card);border:1px solid var(--gold);border-radius:6px 28px 6px 28px;padding:2rem;box-shadow:0 20px 50px rgba(13,25,80,.18)}
+label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.3rem;color:var(--muted)}
+input,select{width:100%;font:inherit;padding:.75rem .9rem;border-radius:10px;border:1px solid var(--line);background:var(--field);color:var(--ink)}
+input:focus-visible,select:focus-visible{outline:2px solid var(--gold);border-color:var(--gold)}
+.ticket .full{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:1.2rem}
+#hasil{margin:0;color:var(--muted);font-size:.92rem}
+#hasil a{color:var(--ink)}
+.bukti{margin-top:1.4rem;background:var(--card);border:1px dashed var(--gold);border-radius:20px;padding:1.6rem}
+.bukti h3{margin:0 0 .8rem;font-size:1.8rem}
+.bukti dl{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;margin:0 0 1.2rem}
+.bukti dt{color:var(--muted)}
+.bukti dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.bukti p{color:var(--muted);font-size:.9rem;margin:.9rem 0 0}
+@media print{header,.hero,.feats,#tiket form,#transportasi,#kontak,footer,.bukti button{display:none}}
+.acc{background:var(--foil);color:#0d1950;border:0;border-radius:99px;padding:.45rem 1rem;font:inherit;font-weight:600;font-size:.88rem;cursor:pointer;margin-left:.6rem;white-space:nowrap}
+.reward{background:linear-gradient(90deg,#c98a0e,#f9b92e 50%,#fbe29a);color:#0d1950}
+.reward .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 0}
+.reward h3{margin:0;font-size:clamp(1.5rem,4vw,2rem);line-height:1.15}
+.reward p{margin:.2rem 0 0;font-weight:500;font-size:.93rem}
+.reward button{background:#0d1950;color:#f9dc86;border:0;border-radius:99px;padding:.75rem 1.6rem;font:inherit;font-weight:600;cursor:pointer}
+dialog{border:1px solid var(--gold);border-radius:6px 28px 6px 28px;background:var(--card);color:var(--ink);padding:0;width:min(420px,92vw)}
+dialog::backdrop{background:rgba(3,7,31,.75)}
+.dbox{padding:1.8rem;position:relative}
+.dbox h3{margin:0;font-size:1.9rem}
+.dbox .dsub{margin:.2rem 0 1rem;color:var(--muted)}
+.dbox input{margin-bottom:.8rem}
+.dbox .btn{width:100%;margin-top:.3rem}
+.dbox .x{position:absolute;top:.8rem;right:.9rem;background:none;border:0;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.dbox .lnk{background:none;border:0;color:var(--ink);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
+.dbox .sw{text-align:center;margin:.9rem 0 0;font-size:.9rem;color:var(--muted)}
+#dmsg{margin:.8rem 0 0;font-weight:600;color:var(--ink);text-align:center;min-height:1.2em}
+.pts{text-align:center;margin:1rem 0;padding:1rem;border:1px dashed var(--gold);border-radius:16px}
+.pts b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:3rem;line-height:1}
+@media (max-width:780px){nav .acc{width:100%;margin:.4rem 0 0;padding:.7rem}}
+.alt{background:var(--alt)}
+.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.3rem}
+.type{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:4px 22px 4px 22px;padding:1.6rem;transition:transform .2s,box-shadow .2s}
+.type:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,25,80,.18)}
+.type{overflow:hidden}
+.type .ic{margin:-1.6rem -1.6rem 1.3rem;padding:1.2rem 1rem 0;background:linear-gradient(180deg,#050b29,#1c2f7d);border-bottom:2px solid var(--gold)}
+.type .ic svg{display:block;width:100%;height:auto}
+.type h3{margin:.2rem 0 .3rem;font-size:1.6rem}
+.type p{margin:0 0 .8rem;color:var(--muted);font-size:.93rem}
+.type ul{margin:0;padding:0;list-style:none;font-size:.9rem}
+.type li::before{content:"◆";color:var(--gold);font-size:.6rem;margin-right:.6rem;vertical-align:middle}
+.type button{margin-top:1.2rem;background:none;color:var(--ink);border:1px solid var(--gold);border-radius:99px;padding:.55rem 1.2rem;font:inherit;font-weight:600;cursor:pointer}
+.type button:hover{background:var(--gold);color:#0d1950}
+.type.pick{box-shadow:0 0 0 2px var(--gold)}
+.contact{background:linear-gradient(180deg,#0d1950,#050b29);color:#fff}
+.contact .head p{color:#c3cdf2}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
+.cgrid a{display:flex;gap:1rem;align-items:center;border:1px solid rgba(249,185,46,.4);border-radius:16px;padding:1.2rem;text-decoration:none;background:rgba(255,255,255,.04)}
+.cgrid a:hover,.cgrid a:focus-visible{border-color:var(--gold);background:rgba(249,185,46,.1);outline:none}
+.cgrid i{font-style:normal;font-size:1.5rem;width:52px;height:52px;border-radius:50%;background:var(--foil);display:grid;place-items:center;flex:none}
+.cgrid small{display:block;color:#aebbe6}
+footer{background:#03071f;color:#aebbe6;text-align:center;padding:1.5rem 0;font-size:.85rem;padding-bottom:calc(1.5rem + env(safe-area-inset-bottom,0px))}
+footer b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.2rem;color:var(--gold2)}
+@media (max-width:780px){
+#menu{display:block}
+nav{position:absolute;left:0;right:0;top:68px;background:var(--deep);display:none;padding:.5rem 1.2rem 1.2rem;border-bottom:1px solid var(--gold)}
+nav.open{display:block}
+nav ul{flex-direction:column}
+nav a.cta{margin:.4rem 0 0;text-align:center}
+.ticket{padding:1.3rem}
+section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="logo" href="#beranda">Arah Pulang <span class="gold">88</span></a>
+<button id="menu" aria-label="Buka menu" aria-expanded="false">☰</button>
+<nav id="nav"><ul>
+<li><a href="#beranda">Beranda</a></li>
+<li><a href="#tiket">Pembelian Tiket</a></li>
+<li><a href="#transportasi">Jenis Transportasi</a></li>
+<li><a class="cta" href="#kontak">Kontak</a></li>
+<li><button class="acc" id="akun" type="button">Daftar / Masuk</button></li>
+</ul></nav>
+</div>
+</header>
+
+<main>
+<div class="hero" id="beranda">
+<div class="wrap">
+<h1><small>Arah Pulang</small><span class="gold">88</span></h1>
+<div class="rule" aria-hidden="true"><i></i></div>
+<p class="tag">Melangkah sejauh mungkin untuk merasakan nikmatnya pulang</p>
+<p class="script">Perjalanan nyaman, hati tenang,</p>
+<p class="sub">dan menemani perjalanan menuju rumah, keluarga, dan orang tersayang.</p>
+<div class="btns"><a class="btn" href="#tiket">Pesan Perjalananmu Sekarang!</a><a class="ghost" href="#transportasi">Lihat Armada</a></div>
+<div class="road" aria-hidden="true">
+<svg class="bus" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fbe29a"/><stop offset=".5" stop-color="#f9b92e"/><stop offset="1" stop-color="#c98a0e"/></linearGradient><radialGradient id="b"><stop offset="0" stop-color="#fff6cf" stop-opacity=".9"/><stop offset="1" stop-color="#f9b92e" stop-opacity="0"/></radialGradient></defs>
+<ellipse cx="425" cy="104" rx="40" ry="14" fill="url(#b)"/>
+<path d="M10 108V46Q10 24 34 22H350Q394 24 420 66L432 108Z" fill="#16277a" stroke="#0a1442" stroke-width="2"/>
+<path d="M10 84Q210 60 430 96L432 108H10Z" fill="url(#g)"/>
+<path d="M318 32H358Q388 38 406 66H318Z" fill="#a9d4f7"/>
+<g fill="#a9d4f7"><rect x="30" y="34" width="46" height="30" rx="4"/><rect x="86" y="34" width="46" height="30" rx="4"/><rect x="142" y="34" width="46" height="30" rx="4"/><rect x="198" y="34" width="46" height="30" rx="4"/><rect x="254" y="34" width="50" height="30" rx="4"/></g>
+<circle cx="96" cy="114" r="21" fill="#050b29"/><circle cx="96" cy="114" r="9" fill="url(#g)"/>
+<circle cx="340" cy="114" r="21" fill="#050b29"/><circle cx="340" cy="114" r="9" fill="url(#g)"/>
+</svg>
+</div>
+</div>
+</div>
+
+<div class="feats"><div class="wrap"><ul>
+<li><i>🛡️</i>Aman &amp; Terpercaya</li>
+<li><i>💺</i>Nyaman<small>di setiap perjalanan</small></li>
+<li><i>📍</i>Jangkauan Lebih Luas</li>
+<li><i>⏰</i>Tepat Waktu</li>
+</ul></div></div>
+
+<div class="reward"><div class="wrap"><div><h3 id="rt">Daftar akun, langsung dapat 100 poin reward</h3><p id="rp"></p></div><button id="rb" type="button">Daftar sekarang</button></div></div>
+
+<section id="tiket"><div class="wrap">
+<div class="head"><h2>Pembelian Tiket</h2><div class="rule" aria-hidden="true"><i></i></div><p>Isi data perjalananmu di bawah ini, lalu bukti pemesanan langsung muncul di halaman ini.</p></div>
+<form class="ticket" id="form" onsubmit="return false">
+<div><label for="asal">Kota asal</label><input id="asal" placeholder="Contoh: Jakarta" required></div>
+<div><label for="tujuan">Kota tujuan</label><input id="tujuan" placeholder="Contoh: Yogyakarta" required></div>
+<div><label for="tgl">Tanggal berangkat</label><input id="tgl" type="date" required></div>
+<div><label for="pen">Jumlah penumpang</label><input id="pen" type="number" min="1" max="60" value="1" required></div>
+<div><label for="jenis">Jenis transportasi</label>
+<select id="jenis"><option>Bus Eksekutif</option><option>Bus Sleeper</option><option>Travel Minibus</option><option>Bus Pariwisata</option></select></div>
+<div><label for="nama">Nama pemesan</label><input id="nama" placeholder="Nama lengkap" required></div>
+<div><label for="hp">No. HP / WhatsApp</label><input id="hp" type="tel" inputmode="tel" placeholder="08xx xxxx xxxx" required></div>
+<div class="full"><p id="hasil" role="status">Ada pertanyaan sebelum memesan? <a href="https://wa.me/6281234567890?text=Halo%20Arah%20Pulang%2088%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener"><b>Tanya via WhatsApp</b></a></p>
+<button class="btn" id="kirim" type="submit">Pesan Tiket Sekarang</button></div>
+</form>
+<div id="bukti" class="bukti" role="status" hidden></div>
+</div></section>
+
+<section id="transportasi" class="alt"><div class="wrap">
+<div class="head"><h2>Jenis Transportasi</h2><div class="rule" aria-hidden="true"><i></i></div><p>Pilih armada yang sesuai dengan kebutuhan perjalananmu.</p></div>
+<div class="types">
+<article class="type"><div class="ic"><svg viewBox="0 0 300 130" role="img" aria-label="Bus Eksekutif"><circle cx="150" cy="70" r="70" fill="#f9b92e" opacity=".1"/><path d="M20 100V50Q20 34 36 33H212Q246 34 266 66L276 100Z" fill="#16277a" stroke="#f9dc86"/><path d="M20 82Q150 66 276 90V100H20Z" fill="#f9b92e"/><path d="M216 40H238Q256 46 266 64H216Z" fill="#a9d4f7"/><rect x="34" y="42" width="30" height="22" rx="3" fill="#a9d4f7"/><rect x="70" y="42" width="30" height="22" rx="3" fill="#a9d4f7"/><rect x="106" y="42" width="30" height="22" rx="3" fill="#a9d4f7"/><rect x="142" y="42" width="30" height="22" rx="3" fill="#a9d4f7"/><rect x="178" y="42" width="30" height="22" rx="3" fill="#a9d4f7"/><rect x="268" y="88" width="8" height="5" fill="#fff6cf"/><circle cx="84" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="84" cy="102" r="5.5" fill="#f9b92e"/><circle cx="224" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="224" cy="102" r="5.5" fill="#f9b92e"/><path d="M0 117H300" stroke="#f9b92e" stroke-width="2"/><path d="M20 124H70M110 124H160M200 124H250" stroke="#f9dc86" stroke-width="2" opacity=".5"/></svg></div><h3>Bus Eksekutif</h3><p>Pilihan utama untuk perjalanan antar kota yang nyaman dan terjadwal.</p><ul><li>Kursi reclining</li><li>AC &amp; bagasi luas</li><li>Jadwal rutin</li></ul><button data-j="Bus Eksekutif">Pilih armada ini</button></article>
+<article class="type"><div class="ic"><svg viewBox="0 0 300 130" role="img" aria-label="Bus Sleeper"><circle cx="150" cy="70" r="70" fill="#f9b92e" opacity=".1"/><circle cx="262" cy="22" r="9" fill="#f9dc86"/><circle cx="266" cy="19" r="8" fill="#0d1950"/><circle cx="238" cy="14" r="1.6" fill="#fff"/><circle cx="286" cy="40" r="1.6" fill="#fff"/><path d="M24 100V34Q24 20 38 19H206Q238 20 256 50L268 100Z" fill="#16277a" stroke="#f9dc86"/><path d="M24 80Q150 66 268 88V100H24Z" fill="#f9b92e"/><path d="M212 26H232Q246 32 254 48H212Z" fill="#a9d4f7"/><rect x="38" y="26" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="72" y="26" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="106" y="26" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="140" y="26" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="174" y="26" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="38" y="49" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="72" y="49" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="106" y="49" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="140" y="49" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="174" y="49" width="28" height="16" rx="3" fill="#a9d4f7"/><rect x="260" y="88" width="8" height="5" fill="#fff6cf"/><circle cx="84" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="84" cy="102" r="5.5" fill="#f9b92e"/><circle cx="218" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="218" cy="102" r="5.5" fill="#f9b92e"/><path d="M0 117H300" stroke="#f9b92e" stroke-width="2"/><path d="M20 124H70M110 124H160M200 124H250" stroke="#f9dc86" stroke-width="2" opacity=".5"/></svg></div><h3>Bus Sleeper</h3><p>Untuk perjalanan jauh dan malam hari, bisa istirahat lebih lega.</p><ul><li>Kursi rebah lebar</li><li>Selimut &amp; bantal</li><li>Cocok rute panjang</li></ul><button data-j="Bus Sleeper">Pilih armada ini</button></article>
+<article class="type"><div class="ic"><svg viewBox="0 0 300 130" role="img" aria-label="Travel Minibus"><circle cx="150" cy="70" r="70" fill="#f9b92e" opacity=".1"/><path d="M52 100V58Q52 44 66 43H168Q198 44 218 64L240 76Q250 80 250 92V100Z" fill="#16277a" stroke="#f9dc86"/><path d="M52 84Q150 72 250 90V100H52Z" fill="#f9b92e"/><path d="M176 50H194Q208 56 216 68H176Z" fill="#a9d4f7"/><rect x="68" y="50" width="28" height="20" rx="3" fill="#a9d4f7"/><rect x="102" y="50" width="28" height="20" rx="3" fill="#a9d4f7"/><rect x="136" y="50" width="28" height="20" rx="3" fill="#a9d4f7"/><rect x="242" y="86" width="8" height="5" fill="#fff6cf"/><circle cx="96" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="96" cy="102" r="5.5" fill="#f9b92e"/><circle cx="204" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="204" cy="102" r="5.5" fill="#f9b92e"/><path d="M0 117H300" stroke="#f9b92e" stroke-width="2"/><path d="M20 124H70M110 124H160M200 124H250" stroke="#f9dc86" stroke-width="2" opacity=".5"/></svg></div><h3>Travel Minibus</h3><p>Layanan fleksibel untuk keluarga atau rombongan kecil.</p><ul><li>Penjemputan sesuai kesepakatan</li><li>Kapasitas kecil</li><li>Lebih privat</li></ul><button data-j="Travel Minibus">Pilih armada ini</button></article>
+<article class="type"><div class="ic"><svg viewBox="0 0 300 130" role="img" aria-label="Bus Pariwisata"><circle cx="150" cy="70" r="70" fill="#f9b92e" opacity=".1"/><circle cx="44" cy="22" r="14" fill="#f9b92e" opacity=".45"/><path d="M62 24H178" stroke="#f9dc86" stroke-width="3"/><rect x="72" y="14" width="30" height="9" rx="2" fill="#2a3f9e"/><rect x="108" y="11" width="26" height="12" rx="2" fill="#2a3f9e"/><rect x="140" y="15" width="28" height="8" rx="2" fill="#2a3f9e"/><path d="M18 102V40Q18 26 34 25H220Q250 26 270 62L280 102Z" fill="#16277a" stroke="#f9dc86"/><rect x="30" y="33" width="184" height="28" rx="6" fill="#a9d4f7"/><path d="M70 33V61M110 33V61M150 33V61M190 33V61" stroke="#16277a" stroke-width="3"/><path d="M220 33H238Q256 40 266 62H220Z" fill="#a9d4f7"/><path d="M18 84Q100 66 160 78T280 92V102H18Z" fill="#f9b92e"/><rect x="272" y="90" width="8" height="5" fill="#fff6cf"/><circle cx="80" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="80" cy="102" r="5.5" fill="#f9b92e"/><circle cx="226" cy="102" r="14" fill="#050b29" stroke="#f9dc86" stroke-width="1"/><circle cx="226" cy="102" r="5.5" fill="#f9b92e"/><path d="M0 117H300" stroke="#f9b92e" stroke-width="2"/><path d="M20 124H70M110 124H160M200 124H250" stroke="#f9dc86" stroke-width="2" opacity=".5"/></svg></div><h3>Bus Pariwisata</h3><p>Sewa bus untuk wisata, mudik bersama, studi tour, dan acara.</p><ul><li>Kapasitas besar</li><li>Rute sesuai permintaan</li><li>Sewa harian</li></ul><button data-j="Bus Pariwisata">Pilih armada ini</button></article>
+</div>
+</div></section>
+
+<section id="kontak" class="contact"><div class="wrap">
+<div class="head"><h2>Kontak</h2><div class="rule" aria-hidden="true"><i></i></div><p>Punya pertanyaan seputar jadwal, rute, atau sewa armada? Hubungi kami.</p></div>
+<div class="cgrid">
+<a href="https://wa.me/6281234567890?text=Halo%20Arah%20Pulang%2088%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener"><i>💬</i><span><small>Tanya via WhatsApp</small>+62 812 3456 7890</span></a>
+<a href="tel:+6281234567890"><i>📞</i><span><small>Telepon</small>+62 812 3456 7890</span></a>
+<a href="https://www.arahpulang88.com" target="_blank" rel="noopener"><i>🌐</i><span><small>Website</small>www.arahpulang88.com</span></a>
+</div>
+</div></section>
+</main>
+
+<dialog id="dlg"><div class="dbox">
+<button class="x" id="dx" type="button" aria-label="Tutup">✕</button>
+<div id="v-daftar"><h3>Daftar Akun</h3><p class="dsub">Langsung dapat <b>100 poin reward</b>.</p>
+<form id="fd"><label for="dn">Nama lengkap</label><input id="dn" required><label for="dh">No. HP / WhatsApp</label><input id="dh" type="tel" inputmode="tel" required><label for="dp">Kata sandi (min. 6 karakter)</label><input id="dp" type="password" minlength="6" required><button class="btn" type="submit">Daftar &amp; ambil 100 poin</button></form>
+<p class="sw">Sudah punya akun? <button class="lnk" type="button" data-v="masuk">Masuk</button></p></div>
+<div id="v-masuk" hidden><h3>Masuk</h3><p class="dsub">Lihat dan kumpulkan poin rewardmu.</p>
+<form id="fl"><label for="lh">No. HP / WhatsApp</label><input id="lh" type="tel" inputmode="tel" required><label for="lp">Kata sandi</label><input id="lp" type="password" required><button class="btn" type="submit">Masuk</button></form>
+<p class="sw">Belum punya akun? <button class="lnk" type="button" data-v="daftar">Daftar</button></p></div>
+<div id="v-akun" hidden><h3 id="an">Akun</h3><p class="dsub">Poin reward kamu</p>
+<div class="pts"><b id="ap">0</b>poin</div>
+<p class="dsub">Kamu mendapat +10 poin untuk setiap penumpang di setiap pemesanan tiket.</p>
+<button class="btn" id="out" type="button">Keluar</button></div>
+<p id="dmsg" role="status"></p>
+</div></dialog>
+
+<footer><b>Arah Pulang 88</b><br>© 2026 · Melangkah sejauh mungkin untuk merasakan nikmatnya pulang.</footer>
+
+<script>
+var nav=document.getElementById('nav'),mb=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+document.getElementById('tgl').min=new Date().toISOString().slice(0,10);
+document.querySelectorAll('.type button').forEach(function(b){b.addEventListener('click',function(){
+document.getElementById('jenis').value=b.dataset.j;
+document.querySelectorAll('.type').forEach(function(x){x.classList.remove('pick')});
+b.parentNode.classList.add('pick');
+document.getElementById('tiket').scrollIntoView();})});
+document.getElementById('form').addEventListener('submit',function(){
+var f=document.getElementById('form');if(!f.reportValidity())return;
+var v=function(i){return document.getElementById(i).value};
+var kode='AP88-'+Math.random().toString(36).slice(2,8).toUpperCase();
+var rows=[['Kode pemesanan',kode],['Nama',v('nama')],['No. HP',v('hp')],['Rute',v('asal')+' → '+v('tujuan')],['Tanggal',v('tgl')],['Penumpang',v('pen')+' orang'],['Armada',v('jenis')]];
+if(U()){var poin=10*(+v('pen'));addPts(poin);rows.push(['Poin reward','+'+poin+' (total '+U().pts+' poin)'])}
+var b=document.getElementById('bukti');b.innerHTML='';
+var h=document.createElement('h3');h.textContent='Pemesanan diterima ✅';b.appendChild(h);
+var dl=document.createElement('dl');
+rows.forEach(function(r){var dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=r[0];dd.textContent=r[1];dl.appendChild(dt);dl.appendChild(dd)});
+b.appendChild(dl);
+var pb=document.createElement('button');pb.className='btn';pb.type='button';pb.textContent='Cetak bukti pemesanan';pb.onclick=function(){window.print()};
+b.appendChild(pb);
+var n=document.createElement('p');n.textContent='Simpan kode pemesanan ini. Untuk pertanyaan seputar pesanan, hubungi kami lewat WhatsApp di bagian Kontak.';b.appendChild(n);
+b.hidden=false;b.scrollIntoView({block:'center'});
+});
+
+var $=function(i){return document.getElementById(i)};
+var LS={get:function(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function users(){return LS.get('ap88_users')||{}}
+function U(){var s=LS.get('ap88_session');return s?users()[s]||null:null}
+function save(u){var a=users();a[u.hp]=u;LS.set('ap88_users',a)}
+function addPts(n){var u=U();u.pts+=n;save(u);paint()}
+function hash(t){if(window.crypto&&crypto.subtle){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')})}return Promise.resolve(btoa(unescape(encodeURIComponent(t))))}
+function view(n){['daftar','masuk','akun'].forEach(function(x){$('v-'+x).hidden=x!==n});$('dmsg').textContent=''}
+function openDlg(n){view(n);if(!$('dlg').open)$('dlg').showModal()}
+function paint(){var u=U();
+$('akun').textContent=u?'⭐ '+u.pts+' poin':'Daftar / Masuk';
+$('rt').textContent=u?'Halo, '+u.nama+'!':'Daftar akun, langsung dapat 100 poin reward';
+$('rp').textContent=u?'Poin reward kamu: '+u.pts+'. Dapat +10 poin untuk setiap penumpang di setiap pemesanan.':'Dapat juga +10 poin untuk setiap penumpang di setiap pemesanan tiket.';
+$('rb').textContent=u?'Lihat akun saya':'Daftar sekarang';
+if(u){$('an').textContent=u.nama;$('ap').textContent=u.pts;if(!$('nama').value)$('nama').value=u.nama;if(!$('hp').value)$('hp').value=u.hp}}
+$('akun').onclick=function(){nav.classList.remove('open');openDlg(U()?'akun':'daftar')};
+$('rb').onclick=function(){openDlg(U()?'akun':'daftar')};
+$('dx').onclick=function(){$('dlg').close()};
+document.querySelectorAll('[data-v]').forEach(function(b){b.onclick=function(){view(b.dataset.v)}});
+$('fd').onsubmit=function(e){e.preventDefault();var hp=$('dh').value.replace(/\D/g,'');
+if(hp.length<8){$('dmsg').textContent='Nomor HP tidak valid.';return}
+if(users()[hp]){$('dmsg').textContent='Nomor ini sudah terdaftar. Silakan masuk.';return}
+hash($('dp').value).then(function(h){save({hp:hp,nama:$('dn').value.trim(),pw:h,pts:100});LS.set('ap88_session',hp);paint();openDlg('akun');$('dmsg').textContent='Akun dibuat! Bonus 100 poin sudah masuk.'})};
+$('fl').onsubmit=function(e){e.preventDefault();var hp=$('lh').value.replace(/\D/g,''),u=users()[hp];
+hash($('lp').value).then(function(h){if(!u||u.pw!==h){$('dmsg').textContent='Nomor HP atau kata sandi salah.';return}LS.set('ap88_session',hp);paint();openDlg('akun')})};
+$('out').onclick=function(){LS.set('ap88_session',null);$('dlg').close();paint()};
+paint();
+</script>
+</body>
+</html>
